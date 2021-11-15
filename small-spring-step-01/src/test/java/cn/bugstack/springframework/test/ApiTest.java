@@ -19,6 +19,9 @@ public class ApiTest {
 
         // 2.注入bean
         BeanDefinition beanDefinition = new BeanDefinition(new UserService());
+        //registerBeanDefinition在Spring源码中在BeanDefinitionRegistry接口中.
+        //实现类在SimpleBeanDefinitionRegistry/GenericApplicationContext/DefaultListableBeanFactory
+        //其中,DefaultListableBeanFactory继承了BeanFactory
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 3.获取bean
