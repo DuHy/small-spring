@@ -20,9 +20,13 @@ public class ApiTest {
 
         // 2.注册 bean
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        //将bean注册到beanDefinitionMap中,键为bean的name,值暂且为BeanDefinition
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 3.第一次获取 bean
+        //如果bean存在,则直接返回bean
+        //如果不存在,则调用createBean方法
+        //create方法创建对象,并将对象存入单例池中
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.queryUserInfo();
 
