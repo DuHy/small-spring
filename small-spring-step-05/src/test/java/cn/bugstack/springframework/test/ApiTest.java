@@ -98,6 +98,7 @@ public class ApiTest {
 
         // 2. 读取配置文件&注册Bean
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        // 将读取到的xml转化为beandefine放入到beanDefinitionMap中
         reader.loadBeanDefinitions("classpath:spring.xml");
 
         // 3. 获取Bean对象调用方法

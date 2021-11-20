@@ -41,6 +41,7 @@ public class ApiTest {
     @Test
     public void test_xml() {
         // 1.初始化 BeanFactory
+        //应用上下文继承了ResourceLoader,实现了beanFactory
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:springPostProcessor.xml");
 
         // 2. 获取Bean对象调用方法

@@ -26,6 +26,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
     @Override
     public void refresh() throws BeansException {
         // 1. 创建 BeanFactory，并加载 BeanDefinition
+        // 将bean放入beanDefinitionMap中
         refreshBeanFactory();
 
         // 2. 获取 BeanFactory
@@ -38,6 +39,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         registerBeanPostProcessors(beanFactory);
 
         // 5. 提前实例化单例Bean对象
+        // 将对象放入singletonMap中
         beanFactory.preInstantiateSingletons();
     }
 

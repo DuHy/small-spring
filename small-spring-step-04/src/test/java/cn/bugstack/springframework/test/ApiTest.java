@@ -40,6 +40,7 @@ public class ApiTest {
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 5. UserService 获取bean
+        //在调用createBeanInstance方法后,在给bean填充属性
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.queryUserInfo();
     }
