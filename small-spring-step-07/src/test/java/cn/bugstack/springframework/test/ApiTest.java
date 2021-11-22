@@ -14,7 +14,11 @@ public class ApiTest {
     @Test
     public void test_xml() {
         // 1.初始化 BeanFactory
+        // 初始化 InitializingBean 接口
+        //      在调用bean = initializeBean(beanName, bean, beanDefinition)时,会调用InitializingBean中的afterPropertiesSet方法  反射:initMethod.invoke(bean);
+        //      先填充属性,在执行initMethod.invoke(bean)初始化方法,在加入到singletonMap中
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        // 销毁: 虚拟机关闭钩子注册调用销毁方法
         applicationContext.registerShutdownHook();
 
         // 2. 获取Bean对象调用方法

@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class UserDao {
 
+    /**
+     * 配置在xml方法中
+     *     <bean id="userDao" class="cn.bugstack.springframework.test.bean.UserDao" init-method="initDataMethod" destroy-method="destroyDataMethod"/>
+     */
     private static Map<String, String> hashMap = new HashMap<>();
 
     public void initDataMethod(){

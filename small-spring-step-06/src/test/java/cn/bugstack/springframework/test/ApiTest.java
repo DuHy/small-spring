@@ -25,10 +25,12 @@ public class ApiTest {
         reader.loadBeanDefinitions("classpath:spring.xml");
 
         // 3. BeanDefinition 加载完成 & Bean实例化之前，修改 BeanDefinition 的属性值
+        // 在beanDefinitionMap中取出对象,通过PropertyValues去改变对象
         MyBeanFactoryPostProcessor beanFactoryPostProcessor = new MyBeanFactoryPostProcessor();
         beanFactoryPostProcessor.postProcessBeanFactory(beanFactory);
 
         // 4. Bean实例化之后，修改 Bean 属性信息
+        // 从singletonMap中取出对象,通过set方法改变对象
         MyBeanPostProcessor beanPostProcessor = new MyBeanPostProcessor();
         beanFactory.addBeanPostProcessor(beanPostProcessor);
 
