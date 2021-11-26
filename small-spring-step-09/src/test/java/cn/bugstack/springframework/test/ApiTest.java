@@ -33,6 +33,7 @@ public class ApiTest {
     }
 
     @Test
+    //https://blog.csdn.net/yu_kang/article/details/88785932  可参考文档
     public void test_factory_bean() {
         // 1.初始化 BeanFactory
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
